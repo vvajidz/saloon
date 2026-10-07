@@ -33,7 +33,7 @@ export const SALON_SERVICES: SalonServiceItem[] = [
   { id: 'gold_facial', name: 'Gold Facial', category: 'Face & Skin Care', price: 6, durationMin: 45, popular: true },
   { id: 'diamond_facial', name: 'Diamond Facial', category: 'Face & Skin Care', price: 8, durationMin: 50 },
   { id: 'face_bleach', name: 'Face Bleach', category: 'Face & Skin Care', price: 1.5, durationMin: 25 },
-  { id: 'face_bleach_cleanse', name: 'Face Bleach & Cleanse', category: 'Face & Skin Care', price: 2, durationMin: 30 },
+  { id: 'face_bleach_cleanse', name: 'Face Bleach & Cleanse', category: 'Face & Skin Care', price: 1.5, durationMin: 30 },
   { id: 'face_massage', name: 'Face Massage', category: 'Face & Skin Care', price: 2, durationMin: 20 },
   { id: 'neck_bleach', name: 'Neck Bleach', category: 'Face & Skin Care', price: 2, durationMin: 20 },
   { id: 'detan', name: 'Detan', category: 'Face & Skin Care', price: 3, durationMin: 30, popular: true },
