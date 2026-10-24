@@ -675,16 +675,6 @@ export default function HomePage() {
             }`}
           >
             <span dangerouslySetInnerHTML={{ __html: statusMsg.text }} />
-            {spreadsheetUrl && statusMsg.type === 'success' && (
-              <a
-                href={spreadsheetUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="underline hover:text-white ml-2 shrink-0"
-              >
-                View Sheet &rarr;
-              </a>
-            )}
           </div>
         )}
 
