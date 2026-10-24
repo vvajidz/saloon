@@ -1,12 +1,12 @@
 import { SalonServiceItem } from '@/types/salon';
 
 export const SALON_INFO = {
-  name: 'Beard Lounge',
-  tagline: "A Touch of Luxury in Every Style.",
-  motto: 'YOUR LOOK. YOUR STYLE. YOUR LOUNGE.',
-  subtitle: "Premium Men's Salon",
-  address: 'Farwaniya Block 1, Mobile 2000 Building, M1 Floor',
-  country: 'Kuwait',
+  name: 'Saloon',
+  tagline: "Professional Grooming & Styling",
+  motto: 'YOUR LOOK. YOUR STYLE.',
+  subtitle: "Saloon",
+  address: '',
+  country: '',
   currency: 'KD',
   currencySymbol: 'KD',
 };

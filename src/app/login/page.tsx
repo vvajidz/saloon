@@ -51,7 +51,7 @@ export default function LoginPage() {
         
         {/* Salon Logo */}
         <div className="flex flex-col items-center text-center">
-          <SalonLogo size="md" showSubtitle={true} showLocation={true} centered={true} />
+          <SalonLogo size="md" centered={true} />
         </div>
 
         {error && (
@@ -121,7 +121,7 @@ export default function LoginPage() {
         <div className="text-center pt-2 border-t border-white/5">
           <p className="text-[11px] text-gray-500 flex items-center justify-center gap-1">
             <ShieldCheck size={12} className="text-[#d4af37]" />
-            Beard Lounge &bull; Farwaniya Block 1, Kuwait
+            Saloon
           </p>
         </div>
       </div>

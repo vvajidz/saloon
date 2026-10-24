@@ -1,5 +1,5 @@
 // ============================================================================
-// BEARD LOUNGE PREMIUM MEN'S SALON (KUWAIT)
+// SALOON MANAGEMENT ENGINE
 // MULTI-STAFF AUTHENTICATION, ISOLATED SALES & DATA PERSISTENCE ENGINE
 // ============================================================================
 
@@ -32,7 +32,7 @@ const EMPLOYEE_HEADERS = [
 // ===== GOOGLE SHEETS CUSTOM MENU (ONE-CLICK FORMATTING) =====
 function onOpen() {
   SpreadsheetApp.getUi()
-    .createMenu("✂️ Beard Lounge")
+    .createMenu("✂️ Saloon")
     .addItem("🎨 Format & Style Sheets Now", "formatAllSheetsDesign")
     .addItem("👥 Setup Default Staff Accounts", "ensureSheetSetup")
     .addToUi();
@@ -169,20 +169,20 @@ function authenticateUser(username, password) {
   if (cleanUser === "admin" && (cleanPass === "admin@123" || cleanPass === "admin")) {
     return {
       success: true,
-      token: "BL_ADMIN_OK",
+      token: "SALOON_ADMIN_OK",
       username: "admin",
-      name: "Beard Lounge Admin",
+      name: "Saloon Admin",
       role: "Admin",
       phone: "+965 9876 5432"
     };
   }
 
-  if (cleanUser === "beardlounge" && cleanPass === "Beard@123") {
+  if ((cleanUser === "saloon" && (cleanPass === "saloon@123" || cleanPass === "Saloon@123")) || (cleanUser === "beardlounge" && cleanPass === "Beard@123")) {
     return {
       success: true,
-      token: "BL_STAFF_OK",
-      username: "beardlounge",
-      name: "Sameer Khan",
+      token: "SALOON_STAFF_OK",
+      username: cleanUser,
+      name: "Staff Member",
       role: "Staff",
       phone: "+965 9876 5433"
     };
@@ -514,7 +514,7 @@ function ensureSheetSetup() {
     s2.appendRow(["Arjun Das", "arjun", "arjun@123", "Senior Hair Stylist", "'+965 9876 5434", "2026-01-01", "Active"]);
     s2.appendRow(["Rohan Sharma", "rohan", "rohan@123", "Beard Specialist", "'+965 9876 5435", "2026-01-01", "Active"]);
     s2.appendRow(["Fahad Ali", "fahad", "fahad@123", "Skin & Spa Therapist", "'+965 9876 5436", "2026-01-01", "Active"]);
-    s2.appendRow(["Beard Lounge Staff", "beardlounge", "Beard@123", "Staff", "'+965 9876 5437", "2026-01-01", "Active"]);
+    s2.appendRow(["Saloon Staff", "saloon", "Saloon@123", "Staff", "'+965 9876 5437", "2026-01-01", "Active"]);
   }
 }
 

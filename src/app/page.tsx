@@ -9,8 +9,7 @@ import {
   fetchVisits, 
   addEmployee, 
   deleteEmployee,
-  fetchEmployees,
-  getSpreadsheetUrl 
+  fetchEmployees 
 } from '@/lib/salonApi';
 import { 
   SALON_INFO, 
@@ -39,7 +38,6 @@ import {
 export default function HomePage() {
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState<any>(null);
-  const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
 
   // Active Tab: 'pos' | 'my-entries' | 'all-entries' | 'pricelist' | 'staff'
   const [activeTab, setActiveTab] = useState<'pos' | 'my-entries' | 'all-entries' | 'pricelist' | 'staff'>('pos');
@@ -125,7 +123,6 @@ export default function HomePage() {
     } else {
       setCurrentUser(user);
       setStylist(user.role === 'Admin' ? (user.name || 'Admin') : user.name);
-      setSpreadsheetUrl(getSpreadsheetUrl());
       loadData();
     }
   }, [router]);
@@ -528,7 +525,7 @@ export default function HomePage() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `Beard_Lounge_Entries_${adminDateFilter}_${getTodayDate()}.csv`);
+    link.setAttribute("download", `Saloon_Entries_${adminDateFilter}_${getTodayDate()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -550,11 +547,8 @@ export default function HomePage() {
         <header className="flex flex-wrap items-center justify-between pb-4 border-b border-white/10 gap-3">
           <div className="flex items-center gap-2.5">
             <h1 className="text-base font-semibold text-white tracking-wide uppercase">
-              Beard <span className="text-[#f5cf68]">Lounge</span>
+              Saloon
             </h1>
-            <span className="text-[10px] uppercase tracking-wider text-gray-400 font-mono">
-              &bull; Farwaniya, Kuwait
-            </span>
           </div>
 
           <div className="flex items-center gap-3 text-xs">
@@ -565,18 +559,6 @@ export default function HomePage() {
                 {currentUser.role}
               </span>
             </div>
-
-            {spreadsheetUrl && (
-              <a
-                href={spreadsheetUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-400 hover:text-[#f5cf68] transition-colors"
-                title="Open Google Spreadsheet"
-              >
-                Sheet &rarr;
-              </a>
-            )}
 
             <button
               onClick={handleLogout}
@@ -1012,7 +994,7 @@ export default function HomePage() {
                   onClick={() => setActiveTab('pos')}
                   className="px-3 py-1.5 bg-[#d4af37] hover:bg-[#c49f27] text-black rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
                 >
-                  <Plus size={13} /> + New Client
+                  <Plus size={13} />  New Client
                 </button>
               </div>
             </div>
@@ -1186,7 +1168,6 @@ export default function HomePage() {
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-2 border-b border-white/10 text-xs">
               <span className="font-semibold text-white">Full Menu Price List (KD)</span>
-              <span className="text-gray-400">Farwaniya Block 1</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1623,7 +1604,7 @@ export default function HomePage() {
                 disabled={submitting}
                 className="w-full py-2.5 px-4 bg-[#d4af37] hover:bg-[#e5c07b] text-black text-xs font-semibold rounded-lg transition-colors disabled:opacity-40"
               >
-                {submitting ? 'Creating Account...' : 'Save Staff to Spreadsheet'}
+                {submitting ? 'Creating Account...' : 'Create Staff Account'}
               </button>
             </form>
 
@@ -1673,8 +1654,8 @@ export default function HomePage() {
           <div className="bg-[#111622] border border-white/10 rounded-xl max-w-sm w-full p-5 space-y-4 shadow-xl">
             <div className="flex justify-between items-start border-b border-white/5 pb-3">
               <div>
-                <h3 className="text-sm font-semibold text-white">Beard Lounge Kuwait</h3>
-                <p className="text-[10px] text-gray-400">Farwaniya Block 1 &bull; Bill #{receiptData['Bill No']}</p>
+                <h3 className="text-sm font-semibold text-white">Saloon</h3>
+                <p className="text-[10px] text-gray-400">Bill #{receiptData['Bill No']}</p>
               </div>
               <button onClick={() => setReceiptData(null)} className="text-gray-400 hover:text-white">
                 <X size={16} />

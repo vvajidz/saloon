@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const FALLBACK_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzZjA-N5WMD-Ow6wnnjrg3vXnC95LnEezHrRpJG62u-5JBbLomyJlx0uF6aiB9NY_juLg/exec';
+const FALLBACK_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz2KYdel3jABtSspLaIr2AlHXynYjte7N-D8E0e0t46gcMx30tqcO_yVkn86hqOWxbsQg/exec';
 
 function getScriptUrl(req: NextRequest): string {
   const customUrl = req.headers.get('x-custom-script-url');

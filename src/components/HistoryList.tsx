@@ -106,7 +106,7 @@ export const HistoryList: React.FC<HistoryListProps> = ({
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `Beard_Lounge_Visits_${todayStr}.csv`);
+    link.setAttribute("download", `Saloon_Visits_${todayStr}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

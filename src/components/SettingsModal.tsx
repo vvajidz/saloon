@@ -67,7 +67,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, o
     }
   };
 
-  const sampleScriptCode = `// Beard Lounge Premium Salon - Google Apps Script
+  const sampleScriptCode = `// Saloon - Google Apps Script
 const SHEET_NAME = "Visits";
 const EMPLOYEES_SHEET_NAME = "Employees";
 const USERS_SHEET_NAME = "Users";
@@ -222,8 +222,8 @@ function doPost(e) {
             <div className="text-xs text-gray-300">
               <span className="font-semibold text-white">Default Admin Credentials:</span>
               <div className="mt-1 flex gap-4 font-mono text-gray-400">
-                <span>Username: <strong className="text-[#f5cf68]">beardlounge</strong></span>
-                <span>Password: <strong className="text-[#f5cf68]">Beard@123</strong></span>
+                <span>Username: <strong className="text-[#f5cf68]">admin</strong></span>
+                <span>Password: <strong className="text-[#f5cf68]">admin@123</strong></span>
               </div>
             </div>
           </div>

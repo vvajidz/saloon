@@ -235,7 +235,7 @@ export const EmployeeForm: React.FC<EmployeeFormProps> = ({ employees, onEmploye
                 </span>
               ) : (
                 <span className="flex items-center gap-2">
-                  <UserPlus size={16} /> Save Staff to Spreadsheet
+                  <UserPlus size={16} /> Create Staff Account
                 </span>
               )}
             </button>

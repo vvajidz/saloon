@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Beard Lounge | Premium Men's Salon (Kuwait)",
-  description: "A Touch of Luxury in Every Style - Beard Lounge Farwaniya Block 1, Kuwait. Executive sales, booking and salon management system.",
+  title: "Saloon",
+  description: "Executive sales, booking and saloon management system.",
 };
 
 export default function RootLayout({
